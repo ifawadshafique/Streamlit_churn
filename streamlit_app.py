@@ -41,18 +41,102 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        .block-container { padding-top: 1.6rem; padding-bottom: 2.5rem; }
-        [data-testid="stSidebar"] { border-right: 1px solid #e5e7eb; }
-        .app-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: .15rem; }
-        .app-subtitle { color: #64748b; font-size: .96rem; margin-bottom: 1.4rem; }
-        .section-title { font-size: 1.18rem; font-weight: 650; margin: 1rem 0 .35rem; }
-        .section-caption { color: #64748b; font-size: .88rem; margin-bottom: .8rem; }
-        .risk-high { padding: 14px 16px; border-radius: 8px; background: #fff1f2; border: 1px solid #fecdd3; color: #9f1239; }
-        .risk-medium { padding: 14px 16px; border-radius: 8px; background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
-        .risk-low { padding: 14px 16px; border-radius: 8px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
-        .small-note { color: #64748b; font-size: .82rem; }
-        div[data-testid="stMetric"] { border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 14px; background: white; }
-        .report-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; background: #fff; }
+        .block-container {
+            width: 100%;
+            max-width: 1400px;
+            box-sizing: border-box;
+            padding-top: 1.6rem;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem !important;
+            padding-right: 2.5rem !important;
+        }
+
+        [data-testid="stSidebar"] {
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.18rem;
+            font-weight: 650;
+            line-height: 1.3;
+            margin: 1rem 0 .35rem;
+        }
+
+        .section-caption {
+            color: #64748b;
+            font-size: .88rem;
+            line-height: 1.5;
+            margin-bottom: .8rem;
+        }
+
+        .risk-high {
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+            color: #9f1239;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .risk-medium {
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .risk-low {
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .small-note {
+            color: #64748b;
+            font-size: .82rem;
+            line-height: 1.4;
+        }
+
+        div[data-testid="stMetric"] {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px 14px;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .report-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 8px;
+            background: #fff;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Prevent any container from clipping text */
+        [data-testid="stAppViewContainer"],
+        [data-testid="stMain"],
+        [data-testid="stMainBlockContainer"],
+        .block-container,
+        .stMarkdown {
+            overflow: visible !important;
+        }
+
+        @media (max-width: 768px) {
+            .block-container {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+        }
     </style>
     """,
     unsafe_allow_html=True,
@@ -608,9 +692,34 @@ def main():
 
     st.markdown('<div class="app-title">Customer Churn Analytics</div>', unsafe_allow_html=True)
     st.markdown(
-        '<div class="app-subtitle">Customer risk scoring, model diagnostics, explainability and project reports.</div>',
-        unsafe_allow_html=True,
-    )
+    """
+    <h1 style="
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.15rem 0;
+        padding: 0;
+        overflow: visible !important;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+    ">Customer Churn Analytics</h1>
+    <p style="
+        color: #64748b;
+        font-size: 0.96rem;
+        line-height: 1.5;
+        margin: 0 0 1.4rem 0;
+        padding: 0;
+        overflow: visible !important;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    ">Customer risk scoring, model diagnostics, explainability and project reports.</p>
+    """,
+    unsafe_allow_html=True,
+)
 
     with st.sidebar:
         st.markdown("### Customer Churn")
