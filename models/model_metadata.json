@@ -1,0 +1,51 @@
+{
+  "best_model": "LogisticRegression",
+  "needs_scaling": true,
+  "all_model_results": {
+    "LogisticRegression": {
+      "accuracy": 0.7523,
+      "precision": 0.4366,
+      "recall": 0.7587,
+      "f1": 0.5543,
+      "roc_auc": 0.8269
+    },
+    "DecisionTree": {
+      "accuracy": 0.7218,
+      "precision": 0.3989,
+      "recall": 0.7308,
+      "f1": 0.516,
+      "roc_auc": 0.7932
+    },
+    "RandomForest": {
+      "accuracy": 0.7949,
+      "precision": 0.4959,
+      "recall": 0.6329,
+      "f1": 0.5561,
+      "roc_auc": 0.8173
+    },
+    "XGBoost": {
+      "accuracy": 0.7651,
+      "precision": 0.4492,
+      "recall": 0.6958,
+      "f1": 0.546,
+      "roc_auc": 0.8071
+    },
+    "LightGBM": {
+      "accuracy": 0.8204,
+      "precision": 0.5902,
+      "recall": 0.3776,
+      "f1": 0.4606,
+      "roc_auc": 0.8074
+    }
+  },
+  "tuned_metrics": {
+    "accuracy": 0.7523,
+    "precision": 0.4366,
+    "recall": 0.7587,
+    "f1": 0.5543,
+    "roc_auc": 0.8269
+  },
+  "n_features": 55,
+  "train_size": 5634,
+  "test_size": 1409
+}

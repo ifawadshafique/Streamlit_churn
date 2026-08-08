@@ -1,0 +1,33 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw/generated datasets that do not need to be committed
+# Keep the feature background used by the Streamlit app.
+data/*.csv
+!data/telco_churn_features.csv
+
+# Keep trained model artifacts required by the deployed Streamlit app.
+!models/
+!models/*.joblib
+!models/*.json
+
+# Reports used by the Streamlit model-info page.
+!reports/
+!reports/*.png
+
+# MLflow
+mlflow.db
+mlruns/
+
+# Env
+.env
+.venv/
+venv/
+
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store

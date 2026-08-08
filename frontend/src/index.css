@@ -1,0 +1,94 @@
+:root {
+  /* Color tokens */
+  --bg: #0f1318;
+  --surface: #151b23;
+  --surface-raised: #1c2430;
+  --border: #29323f;
+  --border-soft: #202834;
+  --text-primary: #eaedf2;
+  --text-muted: #8993a6;
+  --text-faint: #5b6577;
+
+  --signal: #5eead4;
+  --signal-dim: rgba(94, 234, 212, 0.14);
+  --risk-high: #fb6a4a;
+  --risk-high-dim: rgba(251, 106, 74, 0.14);
+  --risk-medium: #f5b94d;
+  --risk-medium-dim: rgba(245, 185, 77, 0.14);
+  --risk-low: #34d399;
+  --risk-low-dim: rgba(52, 211, 153, 0.14);
+
+  /* Type */
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(94, 234, 212, 0.07), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(251, 106, 74, 0.05), transparent 55%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--signal-dim);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Utility scrollbar so long tables don't look default-browser */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
